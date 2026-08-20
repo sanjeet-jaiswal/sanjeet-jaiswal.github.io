@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sanjeet Jaiswal Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+<style>
+/*======================================
+//--//-->   ABOUT
+======================================*/
+.about-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.about-mf .about-img {
+  margin-bottom: 2rem;
+}
+.about-mf .about-img img {
+  margin-left: 10px;
+}
+.skill-mf .progress {
+  /* background-color: #cde1f8; */
+  margin: .5rem 0 1.2rem 0;
+  border-radius: 0;
+  height: .7rem;
+}
+.skill-mf .progress .progress-bar {
+  height: .7rem;
+  background-color: #ffbd39;
+}
+/* Typing animation: a single role-title is typed character by character via JS,
+   the CSS here only styles the text and a blinking cursor next to it */
+#typing-animation {
+  position: relative;
+  font-size: 30px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+}
+#typing-animation::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 3px;
+  color: #F96D00;
+  animation: blink-cursor 0.8s step-end infinite;
+}
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+/* project image zoom effect */
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+/*======================================
+//--//-->   PROJECT FILTER TABS
+======================================*/
+.project-filter-tabs {
+  display: inline-flex;
+  gap: 0.4rem;
+  background: #f4f4f4;
+  padding: 0.4rem;
+  border-radius: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.filter-tab {
+  border: none;
+  background: transparent;
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.filter-tab:hover {
+  color: #F96D00;
+}
+.filter-tab.active {
+  background: #F96D00;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(249, 109, 0, 0.28);
+}
+
+/* Show only the active project category */
+.project-category {
+  display: none;
+}
+.project-category.active {
+  display: block;
+}
+
+/* Project row: behaves as a normal row up to 3 cards.
+   Each card takes exactly 1/3 of the row width (minus gaps), so 3 or
+   fewer cards always fit with no scrollbar. A 4th card pushes the
+   total width past 100%, which makes the row horizontally scrollable
+   so the next project becomes visible by scrolling right. */
+.project-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.8rem;
+  overflow-x: auto;
+  padding: 0.3rem 0.3rem 1.5rem;
+  scroll-behavior: smooth;
+}
+.project-row::-webkit-scrollbar {
+  height: 6px;
+}
+.project-row::-webkit-scrollbar-thumb {
+  background: #F96D00;
+  border-radius: 10px;
+}
+.project-row::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+.project-card-wrap {
+  flex: 0 0 calc(33.333% - 1.2rem);
+  flex-shrink: 0;
+}
+.project-card-wrap .blog-entry {
+  transition: transform 0.3s ease;
+}
+.project-card-wrap:hover .blog-entry {
+  transform: translateY(-6px);
+}
+@media (max-width: 767.98px) {
+  .project-card-wrap {
+    flex: 0 0 85%;
+  }
+}
+
+/*======================================
+//--//-->   PREMIUM HERO (navbar + home section only,
+   everything else in the template is untouched)
+======================================*/
+:root {
+  --accent: #F9A826;
+  --navy: #0B0E13;
+}
+
+/* Navbar */
+#ftco-navbar, #ftco-navbar.scrolled {
+  background: var(--navy) !important;
+}
+#ftco-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+#ftco-navbar .navbar-brand .brand-white { color: #fff; }
+#ftco-navbar .navbar-brand .brand-accent { color: var(--accent); }
+#ftco-navbar .nav-link {
+  color: rgba(255,255,255,0.78) !important;
+  font-weight: 500;
+  position: relative;
+}
+#ftco-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0.95rem;
+  right: 0.95rem;
+  bottom: 0.3rem;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+#ftco-navbar .nav-link:hover,
+#ftco-navbar .nav-link.active {
+  color: #fff !important;
+}
+#ftco-navbar .nav-link:hover::after,
+#ftco-navbar .nav-link.active::after {
+  transform: scaleX(1);
+}
+.btn-outline-accent {
+  border: 1.5px solid var(--accent) !important;
+  color: var(--accent) !important;
+  background: transparent;
+  border-radius: 6px !important;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.btn-outline-accent:hover {
+  background: var(--accent);
+  color: var(--navy) !important;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.btn-nav-resume { font-size: 0.85rem; }
+.btn-primary {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  border-radius: 6px !important;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(249,168,38,0.32);
+}
+
+/* Hero */
+.hero {
+  background: var(--navy);
+}
+.hero .slider-item {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 90px;
+  overflow: hidden;
+  background: transparent !important;
+}
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-social-rail {
+  position: absolute;
+  left: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 3;
+}
+.hero-rail-line {
+  width: 1px;
+  height: 70px;
+  background: rgba(255,255,255,0.25);
+  margin-bottom: 0.4rem;
+}
+.hero-social-rail a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: lowercase;
+  transition: all 0.2s ease;
+}
+.hero-social-rail a:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--navy);
+}
+@media (max-width: 991.98px) {
+  .hero-social-rail { display: none; }
+}
+
+.hero-flex {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 3rem 0;
+}
+.hero-text-col { flex: 1 1 460px; }
+.hero-image-col { flex: 1 1 420px; display: flex; justify-content: center; }
+
+.hero-eyebrow-line {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+.hero-name {
+  margin: 0 0 1.2rem;
+  line-height: 0.95;
+}
+.hero-name-line {
+  display: block;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.hero-name-white { color: #fff; }
+.hero-name-accent { color: var(--accent); }
+.hero-role {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+.hero-desc {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.hero-stats {
+  position: relative;
+  z-index: 2;
+  margin: 1rem 0 3rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  flex: 1 1 220px;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.4rem 1.6rem;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat-icon {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.hero-stat-num { display: block; font-weight: 700; font-size: 1.5rem; color: var(--accent); }
+.hero-stat-label { display: block; color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+
+.hero-photo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+.hero-photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -50px;
+  background: radial-gradient(circle, rgba(249,168,38,0.35), transparent 70%);
+  border-radius: 50%;
+  filter: blur(8px);
+  z-index: 0;
+}
+.hero-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border: 1px dashed rgba(249,168,38,0.35);
+  border-radius: 50%;
+  z-index: 0;
+}
+.hero-photo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: block;
+}
+.hero-float-card {
+  position: absolute;
+  z-index: 2;
+  background: rgba(11,14,19,0.85);
+  border: 1px solid rgba(249,168,38,0.4);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+.hero-float-card .float-icon { font-size: 1.4rem; }
+.hero-float-card .float-label { font-size: 0.72rem; color: rgba(255,255,255,0.85); white-space: nowrap; }
+.card-insights { top: 6%; right: -4%; }
+.card-analysis { top: 42%; right: -10%; }
+.card-ml { bottom: 4%; right: -2%; }
+@media (max-width: 991.98px) {
+  .hero-float-card { display: none; }
+}
+@media (max-width: 767.98px) {
+  .hero-name-line { font-size: 2.6rem; }
+  .hero-flex { padding-left: 1rem; padding-right: 1rem; }
+}
+</style>
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html"><span class="brand-white">Sanjeet</span> <span class="brand-accent">Jaiswal</span></a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	      <a href="#" download class="btn btn-outline-accent btn-nav-resume d-none d-lg-inline-flex align-items-center py-2 px-3 ml-3">⬇ Download Resume</a>
+	    </div>
+	  </nav>
+	  <section id="home-section" class="hero">
+
+        <div class="social-sidebar">
+
+        <div class="line"></div>
+
+        <a href="https://www.linkedin.com/in/sanjeetjaiswal/">
+        <i class="icon-linkedin"></i>
+        </a>
+
+        <a href="https://github.com/sanjeet-jaiswal?tab=repositories">
+        <i class="icon-github"></i>
+        </a>
+
+        <a href="#">
+        K
+        </a>
+
+        <a href="mailto:sanjeet221601@gmail.com">
+        <i class="icon-envelope"></i>
+        </a>
+
+        </div>
+
+
+<div class="container-fluid px-lg-5">
+
+<div class="row align-items-center min-vh-100">
+
+<!-- LEFT CONTENT -->
+
+<div class="col-lg-6 pl-lg-5">
+
+<div style="max-width:650px;">
+
+<span style="
+color:#ffbd39;
+font-size:20px;
+letter-spacing:2px;
+font-weight:600;">
+👋 Hello, I'm
+</span>
+
+<h1 style="
+font-size:95px;
+font-weight:900;
+line-height:.9;
+margin-top:20px;
+margin-bottom:20px;
+color:white;">
+
+SANJEET
+
+<span style="display:block;color:#ffbd39;">
+JAISWAL
+</span>
+
+</h1>
+
+<div id="typing-animation"></div>
+
+<p style="
+font-size:22px;
+color:#bdbdbd;
+line-height:1.8;
+margin-top:25px;
+max-width:600px;">
+
+I turn raw data into meaningful insights and build
+intelligent AI solutions that create real impact.
+
+</p>
+
+<div class="mt-5">
+
+<a href="#project-section"
+class="btn btn-primary py-3 px-5 mr-3">
+
+View Projects
+
+</a>
+
+<a href="#resume-section"
+class="btn btn-white btn-outline-white py-3 px-5">
+
+Resume
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT IMAGE -->
+
+<div class="col-lg-6 text-center">
+
+<div style="
+position:relative;
+display:inline-block;">
+
+<div style="
+position:absolute;
+width:500px;
+height:500px;
+background:#ffbd39;
+opacity:.25;
+border-radius:50%;
+filter:blur(120px);
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+">
+</div>
+
+<div class="network-circle"></div>
+
+<div class="dot-pattern"></div>
+
+<img
+src="images/sanjeet.png"
+alt="Sanjeet Jaiswal"
+
+style="
+max-width:460px;
+width:100%;
+position:relative;
+z-index:10;
+">
+
+<!-- <div class="floating-card card1">
+📊 Insights
+</div>
+
+<div class="floating-card card2">
+🧠 ML Models
+</div>
+
+<div class="floating-card card3">
+📈 Analytics
+</div> -->
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STATS SECTION -->
+
+<div class="row justify-content-center pb-5">
+
+<div class="col-lg-11">
+
+<div style="
+border:1px solid rgba(255,189,57,.25);
+border-radius:20px;
+padding:30px;
+background:rgba(255,255,255,.03);">
+
+<div class="row text-center">
+
+<div class="col-md-3">
+<h2 style="color:#ffbd39;font-size:45px;">15+</h2>
+<p>Projects Completed</p>
+</div>
+
+<div class="col-md-3">
+<h2 style="color:#ffbd39;font-size:45px;">5+</h2>
+<p>Technologies</p>
+</div>
+
+<div class="col-md-3">
+<h2 style="color:#ffbd39;font-size:45px;">2+</h2>
+<p>Years Learning</p>
+</div>
+
+<div class="col-md-3">
+<h2 style="color:#ffbd39;font-size:45px;">Open</h2>
+<p>To Work</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+
+var typingAnimationElement =
+document.getElementById('typing-animation');
+
+var typingTexts = [
+'Data Scientist',
+'Machine Learning Engineer',
+'AI Enthusiast',
+'Data Analyst'
+];
+
+var textIndex = 0;
+
+function playTypingAnimation(text){
+
+var charIndex = 0;
+
+typingAnimationElement.textContent='';
+
+var typeInterval = setInterval(function(){
+
+typingAnimationElement.textContent +=
+text[charIndex];
+
+charIndex++;
+
+if(charIndex===text.length){
+
+clearInterval(typeInterval);
+
+setTimeout(function(){
+
+textIndex =
+(textIndex+1)%typingTexts.length;
+
+playTypingAnimation(
+typingTexts[textIndex]
+);
+
+},1500);
+
+}
+
+},100);
+
+}
+
+playTypingAnimation(
+typingTexts[textIndex]
+);
+
+});
+
+</script>
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    	<div class="container">
+			<div class="row">
+				<div class="row d-flex align-items-stretch">
+				<!-- <div class="row d-flex"> -->
+					<div class="col-md-6 col-lg-5 d-flex">
+						<div class="img-about img d-flex align-items-stretch">
+							<div class="overlay">
+								<div class="row">
+									<div class="col-sm-6 col-md-5">
+									  <div class="about-img">
+										<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
+									  </div>
+									</div>
+									<!-- Details next to profile image -->
+									<div class="col-sm-6 col-md-7">
+									  <div class="about-info">
+										<p><span class="title-s">Name: </span> <span>Sanjeet Jaiswal</span></p>
+										<p><span class="title-s">Job Role: </span> <span>Data Scientist and Data Analyst</span></p>
+										<!-- <p><span class="title-s">Experience: </span> <span>5 Years 3 Months</span></p> -->
+										<p><span class="title-s">Address: </span> <span>Bangalore, India</span></p>
+									  </div>
+									</div>
+								  </div>
+								<div class="skill-mf">
+									<p class="title-s">Skills</p>
+									<span>SQL</span> <span class="pull-right">95%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>PYTHON</span> <span class="pull-right">85%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Data Visualization</span> <span class="pull-right">90%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Statistical Analysis</span> <span class="pull-right">85%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Machine Learning</span> <span class="pull-right">80%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									<span>Deep Learning</span> <span class="pull-right">85%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+						<div class="row justify-content-start pb-3">
+							<div class="col-md-12 heading-section ftco-animate">
+								
+								<!-- <h1 class="big">About</h1> -->
+								<h2 class="mb-4">About Me</h2>
+								
+								<p> A Data Science enthusiast with a sharp eye for analytics — 
+									I thrive where data meets decision-making. My work spans the full spectrum,
+									from crafting insightful dashboards in Tableau and Power BI to engineering 
+									and deploying machine learning and deep learning models using PyTorch and TensorFlow. 
+									I specialize in building systems that don't just process data, but learn from it.
+									With a focused expertise in Natural Language Processing and Large Language Models,
+									I work at the forefront of AI — designing intelligent pipelines that understand context,
+									extract meaning, and generate real-world value from language.
+									</p>
+								<ul class="about-info mt-4 px-md-0 px-2">
+									<li class="d-flex"><span>Profile:</span> <span>Data Science &amp; Analytics</span></li>
+									<!-- <li class="d-flex"><span>Domain:</span> <span>Retail, Ecommerce, BFSI &amp; Digital Marketing</span></li> -->
+									<li class="d-flex"><span>Education:</span> <span>Bachelor of Science in Maths</span></li>
+									<li class="d-flex"><span>Language:</span> <span>English, Hindi</span></li>
+									<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI, Looker &amp; Tableau</span></li>
+									<li class="d-flex"><span>Other Skills:</span> <span>Python, Excel, Git, SQL,Seaborn,Matplotlib ,Numpy &amp; Pandas</span></li>
+									<li class="d-flex"><span>Interest:</span> <span>Exploring ,Teaching</span></li>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="counter-wrap ftco-animate d-flex mt-md-3">
+							<div class="text">
+								<!-- <p class="mb-4">
+									<span class="number" data-number="30">0</span> <span>+</span>
+									<span>&nbsp; Projects completed</span>
+								</p> -->
+								<p><a href="https://www.linkedin.com/in/sanjeetjaiswal/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+	
+    <section class="ftco-section ftco-no-pb" id="resume-section">
+    	<div class="container">
+    		<!-- <div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Resume</h1>
+            <h2 class="mb-4">Resume</h2>
+            <p>Seasoned Senior Data Analyst with 5+ years of experience driving business strategies through data-driven insights. Proven expertise in data science, statistical analysis, machine learning algorithms and project management.</p>
+          </div>
+        </div> -->
+		<!-- <div class="row">
+			<h1 class="big-4">Experience</h1>
+			<div class="underline"></div>
+		</div>
+		<br> -->
+		
+		<!-- <div class="row">
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2021-Present</span>
+						<h2>Senior Data Analyst</h2>
+						<span class="position">Merkle</span>
+						<p class="mt-4">Merkle, a leading CXM and media company with over 10K+ professionals globally. It's a part of Dentsu International. 
+							<ul>
+								<li>Analysed ad campaigns, clickstream, and customer surveys data, identified an increasing demand and launched a strategic product line.</li>
+								<li>Developed time series forecasting models to predict sales and optimize marketing budgets, got model performance of 92%.</li>
+								<li>Designed and executed A/B tests, performed rigorous statistical analysis. Led to 20% MoM increase in the conversion rate.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2018-2021</span>
+						<h2>Senior Data Analyst</h2>
+						<span class="position">iQuanti</span>
+						<p class="mt-4">iQuanti is a data-driven digital marketing analytics and solutions company, helps top 100 global brands. 
+							<ul>
+								<li>Performed in-depth market research and analysis to create online pages. Resulted in ~100% website growth and 30% increase in conversion rate YoY.</li>
+								<li>Delivered multiple training and mentorship sessions on analytical tools like SQL, MS Excel, Power BI, Tableau and Python.</li>
+								<li>Performed migration and enhancements for merchandising dashboard, involved data integration and its feature improvement.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+			</div> -->
+		<br>
+		<br>
+		<div class="row">
+			<h1 class="big-4">Education</h1>
+			<div class="underline"></div>
+		</div>
+		<br>
+		
+			<div class="row">
+
+  <div class="col-md-4">
+    <div class="resume-wrap ftco-animate">
+      <span class="date">2026-2028</span>
+      <h2>Master of Computer Application (AIML)</h2>
+      <span class="position">Vellore Institute of Technology (VIT)</span>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="resume-wrap ftco-animate">
+      <span class="date">2020-2023</span>
+      <h2>Bachelor of Science</h2>
+      <span class="position">Veer Bahadur Singh Purvanchal University</span>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="resume-wrap ftco-animate">
+      <span class="date">2018-2020</span>
+      <h2>Higher Secondary School</h2>
+      <span class="position">St. Xavier's School</span>
+    </div>
+  </div>
+
+</div>
+
+    		<div class="row justify-content-center mt-5">
+    			<div class="col-md-6 text-center ftco-animate">
+    				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+   
+    <section class="ftco-section" id="project-section">
+      <div class="container">
+        <div class="row justify-content-center mb-4 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <!-- <h1 class="big big-2">Projects</h1> -->
+            <h2 class="mb-4">Projects</h2>
+            <p>Explore my work across Data Analytics, Data Science &amp; Generative AI.</p>
+          </div>
+        </div>
+
+        <!-- Project category filter tabs -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-12 text-center">
+            <div class="project-filter-tabs">
+              <button type="button" class="filter-tab active" data-filter="cat-data-analytics">Data Analytics</button>
+              <button type="button" class="filter-tab" data-filter="cat-data-science">Data Science</button>
+              <button type="button" class="filter-tab" data-filter="cat-gen-ai">Generative AI</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Analytics projects -->
+        <div class="project-category active" id="cat-data-analytics">
+          <div class="project-row">
+            <!-- <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry justify-content-end">
+                <a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql">Digital Music Store Data Analysis using SQL</a></h3>
+                  <p>Analyzed music store data using advanced SQL queires to identify gaps and increase the business growth.</p>
+                </div>
+              </div>
+            </div> -->
+            <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry justify-content-end">
+                <a href="https://github.com/sanjeet-jaiswal/Credit_Card_Financial_Dashboard" class="block-20 zoom-effect" style="background-image: url('images/credit.png');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="https://github.com/sanjeet-jaiswal/Credit_Card_Financial_Dashboard">Credit Card Transaction and Customer Dashboard using Power BI</a></h3>
+                  <p>Developed an interactive dashboard using transaction and customer data from a SQL database, to provide real-time insights.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry justify-content-end">
+                <a href="https://github.com/sanjeet-jaiswal/Diwali_Sales_Analysis" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="https://github.com/sanjeet-jaiswal/Diwali_Sales_Analysis">Data Analysis using Python Project</a></h3>
+                  <p>Performed exploratory data analysis on diwali sales data using Python to improve the customer experience.</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry">
+                <a href="https://github.com/sanjeet-jaiswal/customer-shopping-behaviour-sql-python-powerbi" class="block-20 zoom-effect" style="background-image: url('images/shopping.png');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="https://github.com/sanjeet-jaiswal/customer-shopping-behaviour-sql-python-powerbi">Customer Shopping Behaviour Analysis</a></h3>
+                  <p>Designed a power bi dashboard for customer shopping behaviour and data from mysql database</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Science projects -->
+        <div class="project-category" id="cat-data-science">
+          <div class="project-row">
+            <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry justify-content-end">
+                <a href="https://github.com/sanjeet-jaiswal/laptop_price_predition" class="block-20 zoom-effect" style="background-image: url('images/laptop.png');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="https://github.com/sanjeet-jaiswal/laptop_price_predition">Laptop Price Prediction</a></h3>
+                  <p>Developed an end to end to machine learning model to predict Laptop Price based on the input feature, performed feature engineering.</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry justify-content-end">
+                <a href="https://github.com/sanjeet-jaiswal/Insurence_Prediction" class="block-20 zoom-effect" style="background-image: url('images/insurence.png');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="https://github.com/sanjeet-jaiswal/Insurence_Prediction">Health Insurance Cost Prediction</a></h3>
+                  <p>A Machine Learning powered web application that predicts medical insurance charges based on user details such as age, BMI, smoking habits and more.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          Generative AI projects — no live projects yet, so this panel and its
+          filter result stay commented out for now. The markup below is ready
+          to use: uncomment it, swap in real links/images, and (if you'd like)
+          remove the "disabled" handling for the Generative AI tab in the
+          script below. With 4 sample cards it also shows how the row scrolls
+          once a category has more than 3 projects.
+
+        <div class="project-category" id="cat-gen-ai">
+          <div class="project-row">
+            <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry justify-content-end">
+                <a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_6.jpg');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="#">RAG-based Document Q&amp;A Chatbot</a></h3>
+                  <p>Built a retrieval-augmented generation pipeline using LangChain and a vector store to answer questions over custom documents.</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry justify-content-end">
+                <a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_7.jpg');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="#">Fine-tuned LLM for Domain Q&amp;A</a></h3>
+                  <p>Fine-tuned an open-source LLM on a domain-specific dataset to improve response accuracy for niche use cases.</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry justify-content-end">
+                <a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_8.jpg');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="#">AI Content Generation Pipeline</a></h3>
+                  <p>Created an automated pipeline using prompt engineering to generate and format marketing copy at scale.</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-wrap ftco-animate">
+              <div class="blog-entry justify-content-end">
+                <a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_9.jpg');">
+                </a>
+                <div class="text mt-3 float-right d-block">
+                  <h3 class="heading"><a href="#">Image Captioning with Vision-Language Models</a></h3>
+                  <p>Implemented a vision-language model to auto-generate descriptive captions for a product image catalog.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var filterTabs = document.querySelectorAll('.filter-tab');
+          var projectCategories = document.querySelectorAll('.project-category');
+
+          filterTabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+              var target = this.getAttribute('data-filter');
+
+              // Generative AI panel is commented out until real projects exist.
+              if (!document.getElementById(target)) {
+                return;
+              }
+
+              filterTabs.forEach(function (t) { t.classList.remove('active'); });
+              this.classList.add('active');
+
+              projectCategories.forEach(function (cat) {
+                cat.classList.toggle('active', cat.id === target);
+              });
+            });
+          });
+        });
+        </script>
+      </div>
+    </section>
+	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+      <!-- <div class="container">
+		<div class="row d-md-flex align-items-center">
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="20">0</strong>
+                <span>Achievements</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="30">0</strong>
+                <span>Projects</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="1000">0</strong>
+                <span>Mentored Students</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="500">0</strong>
+                <span>Cups of coffee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+	
+	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+			<!-- <div class="container"> -->
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>More projects on<span> Github  </span> </h2>
+						<div class="heading"> <h4> I love to solve business problems &amp; uncover hidden data stories </h4>
+						<br>
+						<p><a href="https://github.com/sanjeet-jaiswal?tab=repositories" class="btn btn-primary py-3 px-5">GitHub</a></p>
+						</div>
+					</div>
+				</div>
+			<!-- </div> -->
+		</div>
+	</section>
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <!-- <h1 class="big big-2">Contact</h1> -->
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Below are the details to reach out to me!</p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center contact-info mb-5">
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<h3 class="mb-4">Address</h3>
+	            <p>Noida (UP), India</p>
+	          </div>
+          </div>
+          <!-- <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<h3 class="mb-4">Contact Number</h3>
+	            <p><a href="tel://0101010101">+ 0 101 0101 101</a></p>
+	          </div>
+          </div> -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<h3 class="mb-4">Email Address</h3>
+	            <p><a href="mailto:sanjeet221601@gmail.com">sanjeet221601@gmail.com</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-linkedin"></span>
+          		</div>
+          		<h3 class="mb-4">LinkedIn</h3>
+	            <p><a href="https://www.linkedin.com/in/sanjeetjaiswal/" target="_blank">Connect with me</a></p>
+	          </div>
+          </div>
+		  <div class="container">
+			<br>
+			<br>
+			<!-- <div class="row justify-content-center">
+				<div class="col-md-7 ftco-animate text-center">
+					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/uLaTShUKXraAvHJ77" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+				</div>
+			</div> -->
+				<br>
+					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+					  <li class="ftco-animate normal-txt">Find me on  </li>
+					  <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->
+					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/sanjeetjaiswal/"><span class="icon-linkedin"></span></a></li>  
+					  <!-- <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-twitter"></span></a></li>
+					  <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-facebook"></span></a></li>
+				      <li class="ftco-animate"><a href="https://www.instagram.com/rishabhnmishra/"><span class="icon-instagram"></span></a></li> -->
+					</ul>
+				<br>
+		   </div>
+   </div>
+ </section>
+ 
+	
+    <footer class="ftco-footer ftco-section">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-12 text-center">
+  
+			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
