@@ -422,43 +422,113 @@
 }
 
 /* =========================================
-   MOBILE HOME PAGE FIX
+   MOBILE HOME PAGE - FINAL ADJUSTMENT
 ========================================= */
 
 @media (max-width: 767.98px) {
 
-    #home-section .container-fluid {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+    /* -----------------------------------------
+       1. MOBILE NAVBAR
+       Menu links ko page ko push nahi karne dena
+    ----------------------------------------- */
+
+    #ftco-navbar .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background: #0b0c12;
+        padding: 10px 20px 15px;
     }
+
+    #ftco-navbar .navbar-nav {
+        margin: 0 !important;
+    }
+
+    #ftco-navbar .navbar-nav .nav-item {
+        margin: 0;
+    }
+
+    #ftco-navbar .navbar-nav .nav-link {
+        padding: 8px 0 !important;
+    }
+
+
+    /* -----------------------------------------
+       2. HOME CONTENT
+       Menu ke baad Hello, I'm ko upar lao
+    ----------------------------------------- */
+
+    #home-section .hero-flex {
+        padding-top: 20px !important;
+    }
+
+    #home-section .text {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+
+    /* -----------------------------------------
+       3. NAME
+    ----------------------------------------- */
 
     #home-section h1 {
         font-size: 48px !important;
         line-height: 1 !important;
-        margin-top: 15px !important;
+        margin-top: 10px !important;
+        margin-bottom: 15px !important;
     }
+
+
+    /* -----------------------------------------
+       4. TYPING TEXT
+    ----------------------------------------- */
 
     #typing-animation {
         font-size: 22px !important;
         white-space: normal !important;
-        line-height: 1.4;
+        line-height: 1.4 !important;
     }
+
+
+    /* -----------------------------------------
+       5. DESCRIPTION
+    ----------------------------------------- */
 
     #home-section p {
         font-size: 16px !important;
         line-height: 1.6 !important;
     }
 
+
+    /* -----------------------------------------
+       6. BUTTONS
+    ----------------------------------------- */
+
     #home-section .btn {
         padding: 12px 20px !important;
         margin-bottom: 10px;
     }
+
+
+    /* -----------------------------------------
+       7. PHOTO
+       Photo ke neeche kuch change nahi
+    ----------------------------------------- */
 
     #home-section img {
         max-width: 320px !important;
         width: 100%;
         height: auto;
     }
+
+
+    /* -----------------------------------------
+       8. STATS
+       Neeche wale section ko untouched rakho
+    ----------------------------------------- */
 
     #home-section .col-md-3 {
         width: 50%;
