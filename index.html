@@ -422,57 +422,107 @@
 }
 
 /* =========================================
-   MOBILE HOME PAGE - FINAL ADJUSTMENT
+   MOBILE HOME PAGE - FINAL FIX
 ========================================= */
 
 @media (max-width: 767.98px) {
 
-    /* -----------------------------------------
-       1. MOBILE NAVBAR
-       Menu links ko page ko push nahi karne dena
-    ----------------------------------------- */
+    /* =====================================
+       1. MOBILE NAVBAR DROPDOWN
+       ===================================== */
 
-    #ftco-navbar .navbar-collapse {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        z-index: 9999;
-        background: #0b0c12;
-        padding: 10px 20px 15px;
-    }
+    #ftco-nav {
+    position: absolute !important;
+    top: 100%;
+    right: 10px;
+    left: auto;
+    width: 150px;
+    z-index: 9999;
+    background: #0b0c12;
+    padding: 10px 15px !important;
+    border: 1px solid rgba(255, 189, 57, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
 
-    #ftco-navbar .navbar-nav {
+    #ftco-nav .navbar-nav {
         margin: 0 !important;
     }
 
-    #ftco-navbar .navbar-nav .nav-item {
-        margin: 0;
+    #ftco-nav .nav-item {
+        margin: 0 !important;
     }
 
-    #ftco-navbar .navbar-nav .nav-link {
-        padding: 8px 0 !important;
+    #ftco-nav .nav-link {
+        padding: 7px 0 !important;
+    }
+
+    
+
+
+    /* =====================================
+       2. HOME ROW
+       REMOVE HUGE MOBILE VERTICAL SPACE
+       ===================================== */
+
+    #home-section > .container-fluid > .row.align-items-center {
+        min-height: auto !important;
+        align-items: flex-start !important;
     }
 
 
-    /* -----------------------------------------
-       2. HOME CONTENT
-       Menu ke baad Hello, I'm ko upar lao
-    ----------------------------------------- */
+    /* =====================================
+       3. SOCIAL SIDEBAR
+       Keep it on left, but don't let it
+       create huge vertical spacing
+       ===================================== */
 
-    #home-section .hero-flex {
-        padding-top: 20px !important;
+    #home-section .social-sidebar {
+        position: absolute !important;
+        left: 20px;
+        top: 450px;
+        z-index: 20;
     }
 
-    #home-section .text {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
+    #home-section .social-sidebar .line {
+    display: none !important;
+}
+
+
+    /* =====================================
+       4. LEFT HOME CONTENT
+       ===================================== */
+
+    #home-section .col-lg-6:first-child {
+    position: relative;
+    padding-left: 30px !important;
+    padding-right: 10px !important;
+    margin-top: 15px !important;
+}
+
+#home-section .col-lg-6:first-child::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    width: 2px;
+    height: 50%;
+    background: #ffbd39;
+}
+
+
+    /* =====================================
+       5. HELLO I'M
+       ===================================== */
+
+    #home-section .col-lg-6:first-child > div {
+        max-width: 100% !important;
     }
 
 
-    /* -----------------------------------------
-       3. NAME
-    ----------------------------------------- */
+    /* =====================================
+       6. NAME
+       ===================================== */
 
     #home-section h1 {
         font-size: 48px !important;
@@ -482,30 +532,35 @@
     }
 
 
-    /* -----------------------------------------
-       4. TYPING TEXT
-    ----------------------------------------- */
+    /* =====================================
+       7. TYPING TEXT
+       ===================================== */
 
     #typing-animation {
         font-size: 22px !important;
-        white-space: normal !important;
         line-height: 1.4 !important;
+        white-space: normal !important;
     }
 
 
-    /* -----------------------------------------
-       5. DESCRIPTION
-    ----------------------------------------- */
+    /* =====================================
+       8. DESCRIPTION
+       ===================================== */
 
     #home-section p {
         font-size: 16px !important;
         line-height: 1.6 !important;
+        margin-top: 18px !important;
     }
 
 
-    /* -----------------------------------------
-       6. BUTTONS
-    ----------------------------------------- */
+    /* =====================================
+       9. BUTTONS
+       ===================================== */
+
+    #home-section .mt-5 {
+        margin-top: 1.5rem !important;
+    }
 
     #home-section .btn {
         padding: 12px 20px !important;
@@ -513,10 +568,10 @@
     }
 
 
-    /* -----------------------------------------
-       7. PHOTO
-       Photo ke neeche kuch change nahi
-    ----------------------------------------- */
+    /* =====================================
+       10. PHOTO
+       Don't change anything below photo
+       ===================================== */
 
     #home-section img {
         max-width: 320px !important;
@@ -525,10 +580,21 @@
     }
 
 
-    /* -----------------------------------------
-       8. STATS
-       Neeche wale section ko untouched rakho
-    ----------------------------------------- */
+    /* =====================================
+       11. PHOTO CONTAINER
+       Reduce gap between buttons and photo
+       ===================================== */
+
+    #home-section > .container-fluid > .row.align-items-center
+    > .col-lg-6.text-center {
+        margin-top: 10px !important;
+    }
+
+
+    /* =====================================
+       12. STATS
+       Leave existing structure intact
+       ===================================== */
 
     #home-section .col-md-3 {
         width: 50%;
@@ -1343,5 +1409,24 @@ typingTexts[textIndex]
   
   <script src="js/main.js"></script>
     
+    <script>
+document.addEventListener("click", function (event) {
+
+    const navbar = document.getElementById("ftco-navbar");
+    const menu = document.getElementById("ftco-nav");
+
+    if (!navbar || !menu) return;
+
+    // Agar click navbar ke andar hua hai to kuch mat karo
+    if (navbar.contains(event.target)) return;
+
+    // Agar menu open hai to close karo
+    if (menu.classList.contains("show")) {
+        menu.classList.remove("show");
+    }
+
+});
+</script>
+
   </body>
 </html>
